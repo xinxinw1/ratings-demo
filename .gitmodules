@@ -1,0 +1,3 @@
+[submodule "lib/ratings"]
+	path = lib/ratings
+	url = git@github.com:xinxinw1/ratings.git
