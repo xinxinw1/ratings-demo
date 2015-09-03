@@ -1,6 +1,6 @@
 <?php header("Cache-Control: no-cache"); ?>
 <?php session_start(); ?>
-<?php $version = "2.0"; ?>
+<?php $version = "2.1"; ?>
 <?php
 if (isset($_POST['username'])){
   $_SESSION['username'] = $_POST['username'];
@@ -51,10 +51,10 @@ if (isset($_GET['id'])){
 <body>
   <h1 id="title">Ratings Demo <?php echo $version ?></h1>
   <div id="login-logout">
-    <form action="?id=<?php echo $id ?>" method="post">
+    <form action="?id=<?php echo rawurlencode($id) ?>" method="post">
       <input type="text" name="username" value="<?php echo $username ?>" placeholder="Username">
     </form>
-    <form action="?id=<?php echo $id ?>" method="post">
+    <form action="?id=<?php echo rawurlencode($id) ?>" method="post">
       <input type="submit" name="logout" value="Logout">
     </form>
   </div>
@@ -63,7 +63,7 @@ if (isset($_GET['id'])){
       <input type="text" name="id" value="<?php echo $id ?>" placeholder="Item Id">
     </form>
   </div>
-  <iframe width="170" height="65" style="border: 0; display: block;" src="lib/ratings/?id=<?php echo $id ?>"></iframe>
+  <iframe width="170" height="65" style="border: 0; display: block;" src="lib/ratings/?id=<?php echo rawurlencode($id) ?>"></iframe>
   <div id="text">
     Github: <a href="https://github.com/xinxinw1/ratings-demo">https://github.com/xinxinw1/ratings-demo</a>
   </div>
