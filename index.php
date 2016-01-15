@@ -1,6 +1,6 @@
 <?php header("Cache-Control: no-cache"); ?>
 <?php session_start(); ?>
-<?php $version = "2.1"; ?>
+<?php $version = "2.2"; ?>
 <?php
 if (isset($_POST['username'])){
   $_SESSION['username'] = $_POST['username'];
